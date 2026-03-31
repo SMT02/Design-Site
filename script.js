@@ -32,10 +32,12 @@ function onScroll() {
 function handleTabletChange(e) {
     if (e.matches) {
         window.addEventListener("scroll", onScroll);
-        navbar.classList.remove("scrolled");
-        hamburger.classList.remove("scrolled");
-        dropdownNav.classList.remove("scrolled");
-        logo.src = "img/CompassMedium.png";
+        if (window.scrollY < 75) {
+            navbar.classList.remove("scrolled");
+            hamburger.classList.remove("scrolled");
+            dropdownNav.classList.remove("scrolled");
+            logo.src = "img/CompassMedium.png";
+        }
     } else {
         window.removeEventListener("scroll", onScroll);
 
@@ -50,7 +52,19 @@ mediaQuery.addEventListener('change', handleTabletChange);
 
 handleTabletChange(mediaQuery);
 
+// Media Query to Remove Card Animations When Screen is Less Than 1200px
+const cardMediaQuery = window.matchMedia("(max-width: 1200px)")
+let cards = document.querySelector(".cardContainer");
 
+function handleCardResize(e) {
+    if (e.matches) {
+        cards.classList.remove("animateTransition", "animateOnScrollFade", "animateFromLeft");
+    } 
+}
+
+cardMediaQuery.addEventListener("change", handleCardResize);
+
+handleCardResize(cardMediaQuery);
 
 // Other Animations ---------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {

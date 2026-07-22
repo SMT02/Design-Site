@@ -478,6 +478,20 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
+    .parallaxText p {
+        font-size: 1rem;
+    }
+
+    .parallaxText h1 {
+        font-size: 1.5rem;
+    }
+
+    .parallaxCardContainer {
+        grid-gap: 400px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
     .parallaxCard {
         flex-direction: column;
         position: static;
@@ -488,8 +502,15 @@ body {
     }
 
     .parallaxCardContainer {
-        display: grid;
         grid-gap: 40px;
+    }
+
+    .parallaxText p {
+        font-size: 2rem;
+    }
+
+    .parallaxText h1 {
+        font-size: 2.5rem;
     }
 }
 

@@ -66,6 +66,25 @@ cardMediaQuery.addEventListener("change", handleCardResize);
 
 handleCardResize(cardMediaQuery);
 
+// Media Query for Parallax Cards
+const parallaxCardQuery = window.matchMedia("(400px <= width <= 700px)");
+
+function handleParallaxCardResize(e) {
+    if (e.matches) {
+        parallaxImg1.src = "img/febe-vanermen-mOFshJ0oF-M-unsplashLandscape.jpg";
+        parallaxImg2.src = "img/kamran-ch-AtmNBpg5uzE-unsplashLandscape.jpg";
+        parallaxImg3.src = "img/hamzah-ismael-2HRZdRbowY8-unsplash.jpg";
+    } else {
+        parallaxImg1.src = "img/febe-vanermen-mOFshJ0oF-M-unsplashCropped.jpg";
+        parallaxImg2.src = "img/kamran-ch-AtmNBpg5uzE-unsplashCropped.jpg";
+        parallaxImg3.src = "img/hamzah-ismael-2HRZdRbowY8-unsplashCropped.jpg";
+    }
+}
+
+parallaxCardQuery.addEventListener("change", handleParallaxCardResize);
+
+handleParallaxCardResize(parallaxCardQuery);
+
 // Other Animations ---------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const animationElements = document.querySelectorAll('.animateOnScrollFade, .animateFromTop, .animateFromLeft');

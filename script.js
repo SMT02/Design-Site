@@ -4,6 +4,9 @@ let hamburger = document.querySelector(".hamburgerButton");
 let dropdownNav = document.querySelector(".dropdownNav");
 let navbar = document.querySelector(".navbar");
 let logo = document.getElementById("logo");
+let parallaxImg1 = document.querySelector(".parallaxImg1");
+let parallaxImg2 = document.querySelector(".parallaxImg2");
+let parallaxImg3 = document.querySelector(".parallaxImg3");
 
 // Hamburger & Navbar Dropdown Menu
 hamburger.addEventListener("click", e => {
